@@ -1,0 +1,42 @@
+<div class="datepicker" id="datepicker-wrapper" [attr.aria-haspopup]="datepickerShown"
+  [attr.aria-expanded]="datepickerShown" [ngClass]="{'datepicker--active': datepickerShown}">
+  <div class="datepicker__heading">
+    <img tabindex="0" class="datepicker__close" (click)="onClose(true)"
+      src="https://assets.cathaypacific.com/icons/green/close_3.svg" alt="">
+    <h3 class="header--level-3 header--type-primary">{{data.header}}</h3>
+    <div class="datepicker__summary">
+      <div class="datepicker__summmary--departing-on">
+        <span class="datepicker__summary-title">{{data.departingOnTitle}}</span>
+        <span class="datepicker__summary-date">{{getDepartingOnDate()}}</span>
+      </div>
+      <div class="datepicker__port-indicator-icon">
+        <div class="grey-circle"></div>
+        <div class="grey-line"></div>
+        <div class="grey-plane">
+          <img src="https://assets.cathaypacific.com/icons/grey/flight.svg" alt="">
+        </div>
+        <div class="grey-circle"></div>
+      </div>
+      <div class="datepicker__summmary--returning-on">
+        <span class="datepicker__summary-title">{{data.returningOnTitle}}</span>
+        <span class="datepicker__summary-date">{{getReturningOnDate()}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="datepicker__content">
+    <div class="datepicker__inner-content">
+      <div class="datepicker__gradient"></div>
+      <div *ngIf="showMessage && feedbackData" class="datepicker__reminder">
+        <stratos-ng-message [type]="'informational'" aria-live="polite" [background]="'white'" [data]="feedbackData">
+        </stratos-ng-message>
+      </div>
+      <form *ngIf="data.checkboxLabel" role="form" class="form datepicker__checkbox-form" [formGroup]="checkboxForm">
+        <stratos-ng-checkbox [label]="data.checkboxLabel" formControlName="flexibleDates"></stratos-ng-checkbox>
+      </form>
+      <div class="datepicker__calendar">
+        <div id="datepicker" class="ui-calendar" [ngClass]="{'ui-calendar--active': datepickerShown}" role="application"
+          [attr.aria-label]="data.datepickerAriaLabel"></div>
+      </div>
+    </div>
+  </div>
+</div>

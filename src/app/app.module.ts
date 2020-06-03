@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StratosNgDatepickerModule } from '@uxui/stratos-ng-datepicker';
+import { StratosNgInputTextModule } from '@uxui/stratos-ng-input-text';
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +10,10 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StratosNgDatepickerModule,
+    StratosNgInputTextModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@uxui/stratos-web/web';  
+
+@import "~@uxui/stratos-web-datepicker/datepicker";
+@import "~@uxui/stratos-web-jquery/jquery-ui.min.css";
+@import "~@uxui/stratos-web-checkbox/checkbox";
+@import "~@uxui/stratos-web-message/message";
+
+.stratos .datepicker__content {
+    flex: 1;
+    background-color: #FFF;
+    padding: 1.5rem 1rem 1rem;
+    position: relative;
+    max-width: max-content !important;
+}
